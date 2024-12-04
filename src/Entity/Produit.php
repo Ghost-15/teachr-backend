@@ -13,17 +13,17 @@ class Produit {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
     #[ORM\Column(length: 45, unique: true)]
-    private ?string $nom = null;
+    private string $nom;
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
+    private string $description;
     #[ORM\Column]
-    private ?int $prix = null;
+    private int $prix;
     #[ORM\Column(length: 45)]
-    private ?string $categorie = null;
+    private string $categorie;
     #[ORM\Column]
-    private ?DateTime $creation = null;
+    private DateTime $creation;
 
 
     public function getId(): ?int

@@ -12,16 +12,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class CategorieController extends AbstractController {
-    #[Route("/allCategorie", name: "result")]
+    #[Route("/allCategorie", name: "all_categorie")]
     public function allProduct (CategorieRepository $repository, EntityManagerInterface $entityManager): Response {
         $data = $repository->findAll();
         if (!$data) {
             throw $this->createNotFoundException(
-                'No product found'
+                'No categorie found'
             );
         }
         foreach ($data as $c){
             $categorie[] =[
+                'id' => $c->getId(),
                 'nom' => $c->getNom(),
             ];
         }
@@ -50,11 +51,11 @@ class CategorieController extends AbstractController {
                                   Request $request, EntityManagerInterface $entityManager): Response {
         $parameter = json_decode($request->getContent(), true);
 
-        $categorie = $repository->find($parameter['p_id']);
+        $categorie = $repository->find($parameter['c_id']);
 
         if (!$categorie) {
             throw $this->createNotFoundException(
-                'No product found'
+                'No categorie found'
             );
         }
 
@@ -77,7 +78,7 @@ class CategorieController extends AbstractController {
 
         if (!$categorie) {
             throw $this->createNotFoundException(
-                'No product found for id '
+                'No categorie found'
             );
         }
 

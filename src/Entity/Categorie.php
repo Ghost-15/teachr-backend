@@ -12,9 +12,9 @@ class Categorie
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
     #[ORM\Column(length: 45, unique: true)]
-    private ?string $nom = null;
+    private string $nom;
 
     /**
      * @return int|null
