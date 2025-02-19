@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.38</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="app"/>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="ksmshop_db"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="streemi"/>
+    <schema id="8" parent="1" name="sys"/>
+    <schema id="9" parent="1" name="teachr">
+      <Current>1</Current>
+    </schema>
+    <schema id="10" parent="1" name="test_db"/>
+    <table id="11" parent="9" name="categorie">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="12" parent="9" name="doctrine_migration_versions">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_unicode_ci</CollationName>
+    </table>
+    <table id="13" parent="9" name="messenger_messages">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="14" parent="9" name="produit">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="15" parent="9" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="16" parent="11" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="11" name="nom">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="18" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="20" parent="12" name="version">
+      <DasType>varchar(191)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="21" parent="12" name="executed_at">
+      <DasType>datetime|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="22" parent="12" name="execution_time">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="23" parent="12" name="PRIMARY">
+      <ColNames>version</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="24" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="25" parent="13" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="26" parent="13" name="body">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="27" parent="13" name="headers">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="28" parent="13" name="queue_name">
+      <DasType>varchar(190)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="29" parent="13" name="created_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="30" parent="13" name="available_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="31" parent="13" name="delivered_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <index id="32" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="33" parent="13" name="IDX_75EA56E0FB7336F0">
+      <ColNames>queue_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="34" parent="13" name="IDX_75EA56E0E3BD61CE">
+      <ColNames>available_at</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="35" parent="13" name="IDX_75EA56E016BA31DB">
+      <ColNames>delivered_at</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="36" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="37" parent="14" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="38" parent="14" name="nom">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="39" parent="14" name="description">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="40" parent="14" name="prix">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="41" parent="14" name="categorie">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="42" parent="14" name="creation">
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="43" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="14" name="UNIQ_29A5EC276C6E55B5">
+      <ColNames>nom</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="46" parent="14" name="UNIQ_29A5EC276C6E55B5">
+      <UnderlyingIndexName>UNIQ_29A5EC276C6E55B5</UnderlyingIndexName>
+    </key>
+    <column id="47" parent="15" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="48" parent="15" name="username">
+      <DasType>varchar(100)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="49" parent="15" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="50" parent="15" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="51" parent="15" name="roles">
+      <Comment>(DC2Type:array)</Comment>
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="52" parent="15" name="is_verified">
+      <DasType>tinyint(1)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="53" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="54" parent="15" name="UNIQ_8D93D649F85E0677">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="56" parent="15" name="UNIQ_8D93D649F85E0677">
+      <UnderlyingIndexName>UNIQ_8D93D649F85E0677</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
