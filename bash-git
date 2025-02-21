@@ -6,7 +6,11 @@ openssl genpkey -algorithm RSA -out config/jwt/private.pem -pkeyopt rsa_keygen_b
 # Generate public key
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 
-*************************************************************************
+# next
 
 $ chmod 600 config/jwt/private.pem
 chmod 644 config/jwt/public.pem
+
+*************************************************************************
+
+docker build . -f ./docker/Dockerfile -t symfony

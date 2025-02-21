@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route("/routeC", name: "app_categorie")]
@@ -18,10 +19,12 @@ class CategorieController extends AbstractController {
     public function allProduct (CategorieRepository $repository, EntityManagerInterface $entityManager): Response {
         $data = $repository->findAll();
         if (!$data) {
-            throw $this->createNotFoundException(
-                'No categorie found'
-            );
+            $response = new Response();
+            $response->setStatusCode(404);
+            $response->headers->set('Content-Type', 'text/plain');
+            return $response;
         }
+
         foreach ($data as $c){
             $categorie[] =[
                 'id' => $c->getId(),
@@ -49,11 +52,10 @@ class CategorieController extends AbstractController {
         return $response;
     }
     #[Route('/udapteCategorie', name: 'udapte_categorie', methods: ['POST'])]
-    public function udapteProduct(CategorieRepository $repository,
-                                  Request $request, EntityManagerInterface $entityManager): Response {
+    public function udapteProduct(Request $request, EntityManagerInterface $entityManager): Response {
         $parameter = json_decode($request->getContent(), true);
 
-        $categorie = $repository->find($parameter['c_id']);
+        $categorie = $entityManager->getRepository(Categorie::class)->find($parameter['c_id']);
 
         if (!$categorie) {
             throw $this->createNotFoundException(
@@ -63,7 +65,6 @@ class CategorieController extends AbstractController {
 
         $categorie->setNom($parameter['nom']);
 
-        $entityManager->persist($categorie);
         $entityManager->flush();
 
         $response = new Response();
@@ -84,9 +85,8 @@ class CategorieController extends AbstractController {
                 'No categorie found'
             );
         }
-
-        $entityManager->remove($categorie);
-        $entityManager->flush();
+            $entityManager->remove($categorie);
+            $entityManager->flush();
 
         $response = new Response();
 //        $response->setContent('User created successfully');

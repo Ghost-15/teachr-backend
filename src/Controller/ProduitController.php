@@ -16,6 +16,19 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[Route("/routeP", name: "app_product")]
 class ProduitController extends AbstractController {
 
+    #[Route('/getProduct/{value}', name: 'get_product')]
+    public function getProduct(string $value, EntityManagerInterface $entityManager): Response
+    {
+        $product = $entityManager->getRepository(Produit::class)->findOneBy(['id' => $value]);
+
+        $p[] =[
+            'n' => $product->getNom(),
+            'd' => $product->getDescription(),
+            'p' => $product->getPrix()
+        ];
+
+        return new JsonResponse($p);
+    }
     #[Route("/allProduct", name: "all_product")]
     public function allProduct (ProduitRepository $repository): Response {
         $data = $repository->findAll();
@@ -45,7 +58,14 @@ class ProduitController extends AbstractController {
         $produit->setNom($parameter['nom']);
         $produit->setDescription($parameter['description']);
         $produit->setPrix($parameter['prix']);
-        $produit->setCategorie($parameter['categorie']);
+        if ($parameter['categorie'] === ""){
+            $response = new Response();
+            $response->setStatusCode(404);
+            $response->headers->set('Content-Type', 'text/plain');
+            return $response;
+        } else {
+            $produit->setCategorie($parameter['categorie']);
+        }
         $creation = new DateTime();
         $produit->setCreation($creation);
 

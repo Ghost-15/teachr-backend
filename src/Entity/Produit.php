@@ -20,7 +20,7 @@ class Produit
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::FLOAT)]
     private ?int $prix = null;
 
     #[ORM\Column(length: 45)]
