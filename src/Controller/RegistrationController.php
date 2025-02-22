@@ -25,7 +25,11 @@ class RegistrationController extends AbstractController
         $app->setUsername($data['username']);
         $app->setEmail($data['email']);
         $app->setPassword($userPasswordHasher->hashPassword($app, $data['password']));
-        $app->setRoles((array)$data['role']);
+        if ($data['role'] === ""){
+            $app->setRoles((array)"ROLE_USER");
+        } else {
+            $app->setRoles((array)$data['role']);
+        }
 
         $response = new Response();
 

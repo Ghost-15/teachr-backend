@@ -75,8 +75,8 @@ class CategorieController extends AbstractController {
         $response->headers->set('Content-Type', 'text/plain');
         return $response;
     }
+//    #[IsGranted('ROLE_ADMIN')]
     #[Route('/deteleC/{id}', name: 'deteleC')]
-    #[IsGranted('ROLE_ADMIN')]
     public function deteleProduct(EntityManagerInterface $entityManager, int $id): Response {
 
         $categorie = $entityManager->getRepository(Categorie::class)->find($id);

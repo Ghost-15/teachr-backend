@@ -113,8 +113,8 @@ class ProduitController extends AbstractController {
         $response->headers->set('Content-Type', 'text/plain');
         return $response;
     }
-    #[Route('/deteleP/{id}', name: 'deteleP')]
 //    #[IsGranted('ROLE_ADMIN')]
+    #[Route('/deteleP/{id}', name: 'deteleP')]
     public function deteleProduct(EntityManagerInterface $entityManager, int $id): Response {
 
         $product = $entityManager->getRepository(Produit::class)->find($id);
