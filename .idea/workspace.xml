@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb566016-90c3-46e5-ac2b-7b26a92e2be1" name="Changes" comment="Bien joue Negro">
-      <change afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/apache.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProductService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests/Service/ProductServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4804896f-132c-46f1-ba95-53e862076ee5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4804896f-132c-46f1-ba95-53e862076ee5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bash-git" beforeDir="false" afterPath="$PROJECT_DIR$/bash-git" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20250219152339.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20250221211413.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuhtController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategorieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategorieController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +216,8 @@
       <option name="presentableId" value="Default" />
       <updated>1739965733002</updated>
       <workItem from="1739965736124" duration="26843000" />
-      <workItem from="1740126781138" duration="28478000" />
+      <workItem from="1740126781138" duration="29373000" />
+      <workItem from="1740237527861" duration="5627000" />
     </task>
     <task id="LOCAL-00001" summary="Bien joue Negro">
       <created>1739989933046</created>
@@ -237,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1739989933046</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Bien joue Negro">
+      <created>1740179014801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740179014802</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

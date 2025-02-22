@@ -58,9 +58,10 @@ class CategorieController extends AbstractController {
         $categorie = $entityManager->getRepository(Categorie::class)->find($parameter['c_id']);
 
         if (!$categorie) {
-            throw $this->createNotFoundException(
-                'No categorie found'
-            );
+            $response = new Response();
+            $response->setStatusCode(404);
+            $response->headers->set('Content-Type', 'text/plain');
+            return $response;
         }
 
         $categorie->setNom($parameter['nom']);

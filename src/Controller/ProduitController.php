@@ -58,13 +58,13 @@ class ProduitController extends AbstractController {
         $produit->setNom($parameter['nom']);
         $produit->setDescription($parameter['description']);
         $produit->setPrix($parameter['prix']);
-        if ($parameter['categorie'] === ""){
+        if ($parameter['selectedCategory'] === ""){
             $response = new Response();
             $response->setStatusCode(404);
             $response->headers->set('Content-Type', 'text/plain');
             return $response;
         } else {
-            $produit->setCategorie($parameter['categorie']);
+            $produit->setCategorie($parameter['selectedCategory']);
         }
         $creation = new DateTime();
         $produit->setCreation($creation);
@@ -87,17 +87,23 @@ class ProduitController extends AbstractController {
         $produit = $repository->find($parameter['p_id']);
 
         if (!$produit) {
-            throw $this->createNotFoundException(
-                'No product found'
-            );
+            $response = new Response();
+            $response->setStatusCode(404);
+            $response->headers->set('Content-Type', 'text/plain');
+            return $response;
         }
 
         $produit->setNom($parameter['nom']);
         $produit->setDescription($parameter['description']);
         $produit->setPrix($parameter['prix']);
-        $produit->setCategorie($parameter['categorie']);
-
-        $entityManager->persist($produit);
+        if ($parameter['selectedCategory'] === ""){
+            $response = new Response();
+            $response->setStatusCode(404);
+            $response->headers->set('Content-Type', 'text/plain');
+            return $response;
+        } else {
+            $produit->setCategorie($parameter['selectedCategory']);
+        }
         $entityManager->flush();
 
         $response = new Response();
@@ -108,7 +114,7 @@ class ProduitController extends AbstractController {
         return $response;
     }
     #[Route('/deteleP/{id}', name: 'deteleP')]
-    #[IsGranted('ROLE_ADMIN')]
+//    #[IsGranted('ROLE_ADMIN')]
     public function deteleProduct(EntityManagerInterface $entityManager, int $id): Response {
 
         $product = $entityManager->getRepository(Produit::class)->find($id);
