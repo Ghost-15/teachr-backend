@@ -12,13 +12,8 @@ RUN apt update && apt install -yqq nodejs npm
 
 COPY . /var/www/
 
-COPY ./docker/apache.conf /etc/apache2/sites-available/000-default.conf
-
-RUN cd /var/www && \
-    composer install && \
-    npm install --force && \
-    npm run build
-
 WORKDIR /var/www/
 
 EXPOSE 80
+
+CMD ["apache2-foreground"]

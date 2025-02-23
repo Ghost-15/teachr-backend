@@ -13,4 +13,18 @@ chmod 644 config/jwt/public.pem
 
 *************************************************************************
 
+COPY ./docker/apache.conf /etc/apache2/sites-available/000-default.conf
+
+RUN cd /var/www && \
+    composer install && \
+    npm install --force && \
+    npm run build
+
+docker tag timosleboss/symfony:latest timosleboss/symfony:v1
+docker push timosleboss/symfony:v1
+
+DOCKER_CLI_HINTS=enabled DOCKER_CLI_EXPERIMENTAL=enabled docker --debug push timosleboss/symfony:latest
+
 docker build . -f ./docker/Dockerfile -t symfony
+docker tag symfony timosleboss/symfony
+docker push timosleboss/symfony
