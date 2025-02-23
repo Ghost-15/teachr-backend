@@ -7,6 +7,7 @@
     <list default="true" id="cb566016-90c3-46e5-ac2b-7b26a92e2be1" name="Changes" comment="Bien joue Negro">
       <change afterPath="$PROJECT_DIR$/migrations/Version20250222174528.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,6 +216,7 @@
       <workItem from="1739965736124" duration="26843000" />
       <workItem from="1740126781138" duration="29373000" />
       <workItem from="1740237527861" duration="8366000" />
+      <workItem from="1740310662186" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="Bien joue Negro">
       <created>1739989933046</created>
@@ -244,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1740246278443</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Bien joue Negro">
+      <created>1740311000767</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740311000767</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
