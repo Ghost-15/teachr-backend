@@ -60,6 +60,7 @@ security:
         - { path: ^/routeP/, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/register, roles: PUBLIC_ACCESS }
+        - { path: ^/test, roles: PUBLIC_ACCESS }
 
 when@test:
     security:

@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Error;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -14,6 +15,12 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class RegistrationController extends AbstractController
 {
+
+    #[Route('/test', name: 'app_test')]
+    public function getProduct(): JsonResponse
+    {
+        return new JsonResponse("Bien joue Negro");
+    }
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher,
                              EntityManagerInterface $entityManager): Response
