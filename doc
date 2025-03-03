@@ -28,3 +28,4 @@ DOCKER_CLI_HINTS=enabled DOCKER_CLI_EXPERIMENTAL=enabled docker --debug push tim
 docker build . -f ./docker/Dockerfile -t symfony
 docker tag symfony timosleboss/symfony
 docker push timosleboss/symfony
+#DATABASE_URL="postgresql://neondb_owner:LrAW4XTmM2Qs@ep-restless-union-a5fxtiv3-pooler.us-east-2.aws.neon.tech:5432/teachr-shop?charset=utf8&sslmode=require"
