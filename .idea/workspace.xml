@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb566016-90c3-46e5-ac2b-7b26a92e2be1" name="Changes" comment="Bien joue Negro">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +223,7 @@
       <workItem from="1740739101650" duration="16245000" />
       <workItem from="1740818492924" duration="7845000" />
       <workItem from="1740988782773" duration="1406000" />
-      <workItem from="1740992201009" duration="1247000" />
+      <workItem from="1740992201009" duration="1556000" />
     </task>
     <task id="LOCAL-00001" summary="Bien joue Negro">
       <created>1739989933046</created>
@@ -283,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1740764947253</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bien joue Negro">
+      <created>1740994586534</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740994586534</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
