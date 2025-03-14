@@ -1,27 +1,18 @@
-FROM php:8.3-apache
+FROM php:8.3-cli-alpine
 
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions pdo_pgsql intl
+RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get install -y zlib1g-dev libwebp-dev libpng-dev && docker-php-ext-install gd
+RUN apt-get install libzip-dev -y && docker-php-ext-install zip
+RUN apt-get install -y libpq-dev postgresql-client
+RUN docker-php-ext-install pdo pdo_pgsql
 
-RUN curl -sS https://getcomposer.org/installer | php -- --disable-tls && \
-   mv composer.phar /usr/local/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN apt update && apt install -yqq nodejs npm
-
-RUN mkdir -p /var/run/apache2 && chown -R www-data:www-data /var/run/apache2
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+RUN apt-get install -y nodejs
 
 RUN a2enmod rewrite
-
-WORKDIR /var/www/
-
-COPY . /var/www/
-
-RUN chown -R www-data:www-data var/cache var/log && \
-    chmod -R 775 var/cache var/log
-
-COPY ./docker/apache.conf /etc/apache2/sites-available/000-default.conf
+RUN service apache2 restart
 
 EXPOSE 80
-
-CMD ["apache2-foreground"]

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  symfony:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: teachr-backend
+    working_dir: /var/www/
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/
+    depends_on:
+      - postgres_db
+    env_file:
+      - .env
+    networks:
+      - symfony_network
+
+networks:
+  symfony_network:
+    external: true

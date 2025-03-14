@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb566016-90c3-46e5-ac2b-7b26a92e2be1" name="Changes" comment="Bien joue Negro">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProduitController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +177,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/php-8.3.13/php.ini-development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tatib/Downloads/optimization-php&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -223,7 +225,9 @@
       <workItem from="1740739101650" duration="16245000" />
       <workItem from="1740818492924" duration="7845000" />
       <workItem from="1740988782773" duration="1406000" />
-      <workItem from="1740992201009" duration="1556000" />
+      <workItem from="1740992201009" duration="1830000" />
+      <workItem from="1740995521018" duration="2659000" />
+      <workItem from="1741340921846" duration="1949000" />
     </task>
     <task id="LOCAL-00001" summary="Bien joue Negro">
       <created>1739989933046</created>
@@ -288,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1740994586534</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Bien joue Negro">
+      <created>1740994615667</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740994615667</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Bien joue Negro">
+      <created>1740994856839</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740994856839</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

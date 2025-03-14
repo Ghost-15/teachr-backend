@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route("/routeP", name: "app_product")]
@@ -113,7 +113,7 @@ class ProduitController extends AbstractController {
         $response->headers->set('Content-Type', 'text/plain');
         return $response;
     }
-//    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/deteleP/{id}', name: 'deteleP')]
     public function deteleProduct(EntityManagerInterface $entityManager, int $id): Response {
 
